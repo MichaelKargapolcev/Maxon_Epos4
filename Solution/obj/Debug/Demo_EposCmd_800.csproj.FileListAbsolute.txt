@@ -1,0 +1,12 @@
+C:\Users\union\Documents\projects\EPOS4\libs\EPOS-DotNet-Library-En\Microsoft Visual C Sharp\Example C#\bin\Debug\Demo_EposCmd.exe.config
+C:\Users\union\Documents\projects\EPOS4\libs\EPOS-DotNet-Library-En\Microsoft Visual C Sharp\Example C#\bin\Debug\Demo_EposCmd.exe
+C:\Users\union\Documents\projects\EPOS4\libs\EPOS-DotNet-Library-En\Microsoft Visual C Sharp\Example C#\bin\Debug\Demo_EposCmd.pdb
+C:\Users\union\Documents\projects\EPOS4\libs\EPOS-DotNet-Library-En\Microsoft Visual C Sharp\Example C#\bin\Debug\EposCmd.Net.dll
+C:\Users\union\Documents\projects\EPOS4\libs\EPOS-DotNet-Library-En\Microsoft Visual C Sharp\Example C#\obj\Debug\Demo_EposCmd_800.csprojAssemblyReference.cache
+C:\Users\union\Documents\projects\EPOS4\libs\EPOS-DotNet-Library-En\Microsoft Visual C Sharp\Example C#\obj\Debug\Demo_EposCmd.Form1.resources
+C:\Users\union\Documents\projects\EPOS4\libs\EPOS-DotNet-Library-En\Microsoft Visual C Sharp\Example C#\obj\Debug\Demo_EposCmd.Properties.Resources.resources
+C:\Users\union\Documents\projects\EPOS4\libs\EPOS-DotNet-Library-En\Microsoft Visual C Sharp\Example C#\obj\Debug\Demo_EposCmd_800.csproj.GenerateResource.cache
+C:\Users\union\Documents\projects\EPOS4\libs\EPOS-DotNet-Library-En\Microsoft Visual C Sharp\Example C#\obj\Debug\Demo_EposCmd_800.csproj.CoreCompileInputs.cache
+C:\Users\union\Documents\projects\EPOS4\libs\EPOS-DotNet-Library-En\Microsoft Visual C Sharp\Example C#\obj\Debug\Demo_EposCmd_800.csproj.CopyComplete
+C:\Users\union\Documents\projects\EPOS4\libs\EPOS-DotNet-Library-En\Microsoft Visual C Sharp\Example C#\obj\Debug\Demo_EposCmd.exe
+C:\Users\union\Documents\projects\EPOS4\libs\EPOS-DotNet-Library-En\Microsoft Visual C Sharp\Example C#\obj\Debug\Demo_EposCmd.pdb
