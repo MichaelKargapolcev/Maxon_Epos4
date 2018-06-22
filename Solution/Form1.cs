@@ -14,6 +14,31 @@ namespace Demo_EposCmd
         private Device _epos_A;
         private DeviceManager _connector_B;
         private Device _epos_B;
+        
+        // xBox joy
+        Timer port_status_update = new Timer();
+        public SharpDX.XInput.Controller ctrl = null;
+        public SharpDX.XInput.Gamepad gamepad;
+        public SharpDX.XInput.State state;
+
+        // Joy struct
+        public struct xbox_joy
+        {
+            public bool A, B, X, Y;
+            public bool start, back, left_shoulder, right_shoulder, start_flag;
+            public bool dpadUp, dpadLeft, dpadDown, dpadRight, dpad_flag;
+            public bool rightthumb, leftthumb;
+            public int left_axis_x, left_axis_y, right_axis_x, right_axis_y;
+            //public float left_axis_x, left_axis_y, right_axis_x, right_axis_y;
+            public int left_trigger, right_trigger;
+        }
+
+        public void xboxdevice()
+        {
+            ctrl = new SharpDX.XInput.Controller(SharpDX.XInput.UserIndex.One);
+        }
+
+
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Form1"/> class.
@@ -21,8 +46,89 @@ namespace Demo_EposCmd
         public Form1()
         {
             InitializeComponent();
+            xboxdevice();
+            port_status_update.Interval = 100;
+            port_status_update.Tick += new EventHandler(joy_update);
+            port_status_update.Start();
         }
 
+        private void joy_update(object sender, EventArgs e)
+        {
+            if (ctrl != null && ctrl.IsConnected == true)
+            {
+                state = ctrl.GetState();
+                gamepad = ctrl.GetState().Gamepad;
+                var joy = new xbox_joy();
+                var buttons = "";
+                #region get joy data
+                gamepad = ctrl.GetState().Gamepad;
+                buttons = gamepad.Buttons.ToString();
+                joy.A = buttons.Contains("A");
+                joy.B = buttons.Contains("B");
+                joy.X = buttons.Contains("X");
+                joy.Y = buttons.Contains("Y");
+
+                joy.start = buttons.Contains("Start");
+                joy.back = buttons.Contains("Back");
+                joy.left_shoulder = buttons.Contains("LeftShoulder");
+                joy.right_shoulder = buttons.Contains("RightShoulder");
+
+                joy.rightthumb = buttons.Contains("RightThumb");
+                joy.leftthumb = buttons.Contains("LeftThumb");
+
+                joy.dpadUp = buttons.Contains("DPadUp");
+                joy.dpadLeft = buttons.Contains("DPadLeft");
+                joy.dpadDown = buttons.Contains("DPadDown");
+                joy.dpadRight = buttons.Contains("DPadRight");
+
+                joy.left_axis_x = gamepad.LeftThumbX + 32768;
+                joy.left_axis_y = gamepad.LeftThumbY + 32768;
+                joy.right_axis_x = gamepad.RightThumbX + 32768;
+                joy.right_axis_y = gamepad.RightThumbY + 32768;
+
+                joy.left_trigger = gamepad.LeftTrigger;
+                joy.right_trigger = gamepad.RightTrigger;
+                #endregion
+
+                this.label_left_trigger.Text = joy.left_trigger.ToString();
+                this.label_right_trigger.Text = joy.right_trigger.ToString();
+
+                this.label_left_axis_x.Text = joy.left_axis_x.ToString();
+                this.label_left_axis_y.Text = joy.left_axis_y.ToString();
+                this.label_right_axis_x.Text = joy.right_axis_x.ToString();
+                this.label_right_axis_y.Text = joy.right_axis_y.ToString();
+
+                if (joy.start) { this.checkBox_use_joy.Checked = true; }
+                if (joy.back) { this.checkBox_use_joy.Checked = false; }
+
+                this.checkBox_use_joy.Visible = true;
+                // MOVE !!!!
+                if (checkBox_use_joy.Checked == true)
+                {
+                    try
+                    {
+                        ProfilePositionMode ppm = _epos_A.Operation.ProfilePositionMode;
+                        ppm.ActivateProfilePositionMode();
+                        textBoxAOM_A.Text = _epos_A.Operation.OperationMode.GetOperationModeAsString();
+                        ppm.MoveToPosition(joy.left_axis_x, true, true);
+                    }
+                    catch { }
+
+                    try
+                    {
+                        ProfilePositionMode ppm = _epos_B.Operation.ProfilePositionMode;
+                        ppm.ActivateProfilePositionMode();
+                        textBoxAOM_B.Text = _epos_B.Operation.OperationMode.GetOperationModeAsString();
+                        ppm.MoveToPosition(joy.right_axis_x, true, true);
+                    }
+                    catch { }
+                }
+            }
+            else
+            {
+                this.checkBox_use_joy.Visible = false;
+            }
+        }
         /// <summary>
         /// Handles the Click event of the button1 control.
         /// </summary>
@@ -65,7 +171,7 @@ namespace Demo_EposCmd
 
                 // Set connection properties
                 _connector_A.Baudrate = b;
-                _connector_A.Timeout = 500;
+                _connector_A.Timeout = 50;
 
                 buttonEnable_A.Enabled = true;
             }
@@ -92,7 +198,7 @@ namespace Demo_EposCmd
 
                 // Set connection properties
                 _connector_B.Baudrate = b;
-                _connector_B.Timeout = 500;
+                _connector_B.Timeout = 50;
 
                 buttonEnable_B.Enabled = true;
             }
@@ -450,6 +556,7 @@ namespace Demo_EposCmd
                         buttonMove_A.Enabled = false;
                         buttonHalt_A.Enabled = false;
                     }
+
                 }
             }
             catch (DeviceException e)

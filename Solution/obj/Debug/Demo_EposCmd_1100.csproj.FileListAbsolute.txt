@@ -10,3 +10,15 @@ C:\Users\union\Documents\projects\EPOS4\libs\EPOS-DotNet-Library-En\Microsoft Vi
 C:\Users\union\Documents\projects\EPOS4\libs\EPOS-DotNet-Library-En\Microsoft Visual C Sharp\Example C# — копия\obj\Debug\Demo_EposCmd_1100.csproj.CopyComplete
 C:\Users\union\Documents\projects\EPOS4\libs\EPOS-DotNet-Library-En\Microsoft Visual C Sharp\Example C# — копия\obj\Debug\Demo_EposCmd.exe
 C:\Users\union\Documents\projects\EPOS4\libs\EPOS-DotNet-Library-En\Microsoft Visual C Sharp\Example C# — копия\obj\Debug\Demo_EposCmd.pdb
+C:\Users\union\Documents\projects\Maxon_Epos4\Solution\bin\Debug\Demo_EposCmd.exe.config
+C:\Users\union\Documents\projects\Maxon_Epos4\Solution\bin\Debug\Demo_EposCmd.exe
+C:\Users\union\Documents\projects\Maxon_Epos4\Solution\bin\Debug\Demo_EposCmd.pdb
+C:\Users\union\Documents\projects\Maxon_Epos4\Solution\bin\Debug\EposCmd.Net.dll
+C:\Users\union\Documents\projects\Maxon_Epos4\Solution\obj\Debug\Demo_EposCmd_1100.csprojAssemblyReference.cache
+C:\Users\union\Documents\projects\Maxon_Epos4\Solution\obj\Debug\Demo_EposCmd.Form1.resources
+C:\Users\union\Documents\projects\Maxon_Epos4\Solution\obj\Debug\Demo_EposCmd.Properties.Resources.resources
+C:\Users\union\Documents\projects\Maxon_Epos4\Solution\obj\Debug\Demo_EposCmd_1100.csproj.GenerateResource.cache
+C:\Users\union\Documents\projects\Maxon_Epos4\Solution\obj\Debug\Demo_EposCmd_1100.csproj.CoreCompileInputs.cache
+C:\Users\union\Documents\projects\Maxon_Epos4\Solution\obj\Debug\Demo_EposCmd_1100.csproj.CopyComplete
+C:\Users\union\Documents\projects\Maxon_Epos4\Solution\obj\Debug\Demo_EposCmd.exe
+C:\Users\union\Documents\projects\Maxon_Epos4\Solution\obj\Debug\Demo_EposCmd.pdb

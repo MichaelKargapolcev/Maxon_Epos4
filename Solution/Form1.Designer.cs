@@ -78,6 +78,13 @@ namespace Demo_EposCmd
             this.buttonSettings_B = new System.Windows.Forms.Button();
             this.textBoxAOM_B = new System.Windows.Forms.TextBox();
             this.timer_B = new System.Windows.Forms.Timer(this.components);
+            this.checkBox_use_joy = new System.Windows.Forms.CheckBox();
+            this.label_right_trigger = new System.Windows.Forms.Label();
+            this.label_left_trigger = new System.Windows.Forms.Label();
+            this.label_right_axis_y = new System.Windows.Forms.Label();
+            this.label_right_axis_x = new System.Windows.Forms.Label();
+            this.label_left_axis_y = new System.Windows.Forms.Label();
+            this.label_left_axis_x = new System.Windows.Forms.Label();
             this.groupBox1_A.SuspendLayout();
             this.groupBox2_A.SuspendLayout();
             this.groupBox3_A.SuspendLayout();
@@ -326,7 +333,7 @@ namespace Demo_EposCmd
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(9, 395);
+            this.buttonExit.Location = new System.Drawing.Point(407, 399);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(46, 23);
             this.buttonExit.TabIndex = 5;
@@ -580,11 +587,82 @@ namespace Demo_EposCmd
             // 
             this.timer_B.Tick += new System.EventHandler(this.Timer_B_ick);
             // 
+            // checkBox_use_joy
+            // 
+            this.checkBox_use_joy.AutoSize = true;
+            this.checkBox_use_joy.Location = new System.Drawing.Point(21, 405);
+            this.checkBox_use_joy.Name = "checkBox_use_joy";
+            this.checkBox_use_joy.Size = new System.Drawing.Size(110, 17);
+            this.checkBox_use_joy.TabIndex = 14;
+            this.checkBox_use_joy.Text = "use xBox Joystick";
+            this.checkBox_use_joy.UseVisualStyleBackColor = true;
+            // 
+            // label_right_trigger
+            // 
+            this.label_right_trigger.AutoSize = true;
+            this.label_right_trigger.Location = new System.Drawing.Point(77, 440);
+            this.label_right_trigger.Name = "label_right_trigger";
+            this.label_right_trigger.Size = new System.Drawing.Size(22, 13);
+            this.label_right_trigger.TabIndex = 20;
+            this.label_right_trigger.Text = "-----";
+            // 
+            // label_left_trigger
+            // 
+            this.label_left_trigger.AutoSize = true;
+            this.label_left_trigger.Location = new System.Drawing.Point(22, 440);
+            this.label_left_trigger.Name = "label_left_trigger";
+            this.label_left_trigger.Size = new System.Drawing.Size(22, 13);
+            this.label_left_trigger.TabIndex = 19;
+            this.label_left_trigger.Text = "-----";
+            // 
+            // label_right_axis_y
+            // 
+            this.label_right_axis_y.AutoSize = true;
+            this.label_right_axis_y.Location = new System.Drawing.Point(77, 488);
+            this.label_right_axis_y.Name = "label_right_axis_y";
+            this.label_right_axis_y.Size = new System.Drawing.Size(22, 13);
+            this.label_right_axis_y.TabIndex = 18;
+            this.label_right_axis_y.Text = "-----";
+            // 
+            // label_right_axis_x
+            // 
+            this.label_right_axis_x.AutoSize = true;
+            this.label_right_axis_x.Location = new System.Drawing.Point(77, 466);
+            this.label_right_axis_x.Name = "label_right_axis_x";
+            this.label_right_axis_x.Size = new System.Drawing.Size(22, 13);
+            this.label_right_axis_x.TabIndex = 17;
+            this.label_right_axis_x.Text = "-----";
+            // 
+            // label_left_axis_y
+            // 
+            this.label_left_axis_y.AutoSize = true;
+            this.label_left_axis_y.Location = new System.Drawing.Point(22, 488);
+            this.label_left_axis_y.Name = "label_left_axis_y";
+            this.label_left_axis_y.Size = new System.Drawing.Size(22, 13);
+            this.label_left_axis_y.TabIndex = 16;
+            this.label_left_axis_y.Text = "-----";
+            // 
+            // label_left_axis_x
+            // 
+            this.label_left_axis_x.AutoSize = true;
+            this.label_left_axis_x.Location = new System.Drawing.Point(22, 466);
+            this.label_left_axis_x.Name = "label_left_axis_x";
+            this.label_left_axis_x.Size = new System.Drawing.Size(22, 13);
+            this.label_left_axis_x.TabIndex = 15;
+            this.label_left_axis_x.Text = "-----";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 430);
+            this.ClientSize = new System.Drawing.Size(463, 519);
+            this.Controls.Add(this.label_right_trigger);
+            this.Controls.Add(this.label_left_trigger);
+            this.Controls.Add(this.label_right_axis_y);
+            this.Controls.Add(this.label_right_axis_x);
+            this.Controls.Add(this.label_left_axis_y);
+            this.Controls.Add(this.label_left_axis_x);
+            this.Controls.Add(this.checkBox_use_joy);
             this.Controls.Add(this.groupBox3_B);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.groupBox2_B);
@@ -608,6 +686,7 @@ namespace Demo_EposCmd
             this.groupBox1_B.ResumeLayout(false);
             this.groupBox1_B.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -662,6 +741,13 @@ namespace Demo_EposCmd
         private System.Windows.Forms.Button buttonSettings_B;
         private System.Windows.Forms.TextBox textBoxAOM_B;
         private System.Windows.Forms.Timer timer_B;
+        private System.Windows.Forms.CheckBox checkBox_use_joy;
+        private System.Windows.Forms.Label label_right_trigger;
+        private System.Windows.Forms.Label label_left_trigger;
+        private System.Windows.Forms.Label label_right_axis_y;
+        private System.Windows.Forms.Label label_right_axis_x;
+        private System.Windows.Forms.Label label_left_axis_y;
+        private System.Windows.Forms.Label label_left_axis_x;
     }
 }
 
